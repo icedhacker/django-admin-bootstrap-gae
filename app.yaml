@@ -1,0 +1,22 @@
+application: appname
+version: 20141113
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /static
+  static_dir: django_admin_bootstrapped/bootstrap3/static
+
+- url: /.*
+  script: main.application
+
+libraries:
+- name: django
+  version: latest
+
+- name: MySQLdb
+  version: "latest"
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'pilot.settings'
